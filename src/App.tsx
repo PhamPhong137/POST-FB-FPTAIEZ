@@ -27,8 +27,21 @@ function App() {
       {/* Logo ở góc trên trái */}
       <div className="absolute top-6 left-6 z-20">
         <div className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-2 shadow-xl border border-white/20">
-          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-2">
-            <BookOpen className="w-4 h-4 text-white" />
+          <div className="w-10 h-10 rounded-full overflow-hidden mr-2 border-2 border-white/30">
+            <img 
+              src="../assets/images/logo.jpg" 
+              alt="FPT AI EZ Logo"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                // Fallback to gradient background with icon if image fails to load
+                e.currentTarget.style.display = 'none';
+                const container = e.currentTarget.parentElement as HTMLElement;
+                if (container) {
+                  container.classList.add('bg-gradient-to-br', 'from-blue-500', 'to-purple-600', 'flex', 'items-center', 'justify-center');
+                  container.innerHTML = '<div class="text-white text-lg font-bold">🧠</div>';
+                }
+              }}
+            />
           </div>
           <span className="text-white font-bold text-sm">FPT AI EZ</span>
         </div>
@@ -42,7 +55,7 @@ function App() {
               <BookOpen className="w-10 h-10 text-white" />
             </div>
             <div>
-              <h1 className="text-6xl font-black bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
+              <h1 className="text-5xl font-black bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
                 PE (Practical Exam)
               </h1>
             </div>
@@ -63,7 +76,7 @@ function App() {
                 <div className="absolute top-0 left-0 w-full h-full bg-white opacity-10 transform skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
                 <div className="relative z-10 text-center">
                   <div className="text-3xl font-black mb-3 tracking-wide">
-                    ÔN TẬP 2 BUỔI PE - 150K
+                    2 BUỔI PE + Tài liệu - 150K
                   </div>
                 </div>
               </div>
@@ -100,9 +113,16 @@ function App() {
         {/* FE Toán Section */}
         <div className="mb-20">
           <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4">
-              🧮 FE Toán
-            </h2>
+            <div className="flex items-center justify-center mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-6 shadow-2xl">
+                <span className="text-4xl">🧮</span>
+              </div>
+              <div>
+                <h1 className="text-5xl font-black bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">
+                  FE (Final Exam) Math
+                </h1>
+              </div>
+            </div>
             <p className="text-lg text-blue-100 opacity-90 font-medium">Toán học cơ bản - Nắm chắc kiến thức</p>
           </div>
 
@@ -118,7 +138,7 @@ function App() {
                 <div className="absolute top-0 left-0 w-full h-full bg-white opacity-10 transform skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
                 <div className="relative z-10 text-center">
                   <div className="text-3xl font-black mb-3 tracking-wide">
-                    ÔN TẬP 3 BUỔI FE TOÁN - 150K
+                    3 BUỔI FE TOÁN + Tài liệu - 150K
                   </div>
                 </div>
               </div>
