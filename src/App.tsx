@@ -24,115 +24,129 @@ function App() {
         <div className="absolute -bottom-8 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-12 relative z-10">
-        <div className="text-center mb-10">
-          <div className="inline-block mb-6">
-            <div className="flex items-center justify-center mb-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4 shadow-xl">
-                <BookOpen className="w-8 h-8 text-white" />
-              </div>
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                FPT AI EZ 
-              </h1>
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center ml-4 shadow-xl">
-                <CheckCircle className="w-8 h-8 text-white" />
-              </div>
+      {/* Logo ở góc trên trái */}
+      <div className="absolute top-6 left-6 z-20">
+        <div className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-2 shadow-xl border border-white/20">
+          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-2">
+            <BookOpen className="w-4 h-4 text-white" />
+          </div>
+          <span className="text-white font-bold text-sm">FPT AI EZ</span>
+        </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 py-8 relative z-10">
+        {/* PE Section - Main Content */}
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center mb-6">
+            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mr-6 shadow-2xl">
+              <BookOpen className="w-10 h-10 text-white" />
             </div>
-            <div className="h-1 w-full bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 rounded-full opacity-60"></div>
+            <div>
+              <h1 className="text-6xl font-black bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
+                PE (Practical Exam)
+              </h1>
+            </div>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="relative group h-full">
-            <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-            <div className="relative bg-white rounded-2xl shadow-2xl p-8 transform group-hover:scale-105 transition-all duration-300 h-full flex flex-col">
+        {/* PE Section */}
+        <div className="mb-20">
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-600 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
+            <div className="relative bg-white rounded-2xl shadow-2xl p-8 transform group-hover:scale-105 transition-all duration-300">
               <div className="absolute top-0 right-0 bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 rounded-tr-2xl rounded-bl-2xl font-bold text-sm animate-bounce">
                 🔥 HOT
               </div>
               
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                  <BookOpen className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h2 className="text-2xl font-semibold text-gray-700">PE (Practical Exam)</h2>
-                  <p className="text-sm text-gray-500 font-normal">Thực hành chuyên sâu</p>
-                </div>
-              </div>
-
-              <div className="relative bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg p-4 mb-4 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-5 transform skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
-                <div className="relative z-10">
-                  <div className="text-2xl font-bold mb-2">150K / 2 buổi</div>
-                  <div className="space-y-1">
-                    <div className="flex items-center">
-                      <MessageCircle className="w-3 h-3 mr-1" />
-                      <span className="font-medium text-sm">2 buổi Online qua Meet</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="w-3 h-3 mr-1" />
-                      <span className="font-medium text-sm">Kèm theo Source Code</span>
-                    </div>
+              {/* Pricing Banner */}
+              <div className="relative bg-gradient-to-r from-blue-400 via-cyan-500 to-blue-600 text-white rounded-2xl p-6 mb-8 overflow-hidden shadow-2xl">
+                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-10 transform skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
+                <div className="relative z-10 text-center">
+                  <div className="text-3xl font-black mb-3 tracking-wide">
+                    ÔN TẬP 2 BUỔI PE - 150K
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-3 flex-grow">
+              {/* PE Subjects List */}
+              <div className="space-y-3 mb-8">
                 {peSubjects.map((subject) => (
-                  <div key={subject.code} className="flex items-center text-gray-700 bg-blue-50 px-4 py-3 rounded-lg border border-blue-100">
-                    <CheckCircle className="w-4 h-4 mr-3 flex-shrink-0 text-blue-500" />
-                    <span className="font-semibold text-blue-600">{subject.code}</span>
-                    <span className="mx-2 text-gray-400">-</span>
-                    <span className="text-sm font-normal">{subject.name}</span>
+                  <div key={subject.code} className="flex items-center bg-blue-50/90 backdrop-blur-sm px-6 py-4 rounded-xl border border-blue-100/50 hover:bg-blue-100/90 transition-all duration-300 transform hover:scale-102 shadow-sm">
+                    <CheckCircle className="w-5 h-5 mr-4 flex-shrink-0 text-blue-500" />
+                    <div>
+                      <span className="font-bold text-lg text-blue-600 mr-3">{subject.code}</span>
+                      <span className="text-gray-600">- {subject.name}</span>
+                    </div>
                   </div>
                 ))}
               </div>
+
+              {/* CTA Button */}
+              <div className="text-center">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100092640345636"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-bold text-xl rounded-2xl hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 transition-all duration-300 shadow-2xl hover:shadow-blue-500/50 transform hover:scale-110"
+                >
+                  <MessageCircle className="w-6 h-6 mr-3" />
+                  🚀 HỌC NGAY ĐI
+                </a>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div className="relative group h-full">
-            <div className="absolute -inset-1 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-            <div className="relative bg-white rounded-2xl shadow-2xl p-8 transform group-hover:scale-105 transition-all duration-300 h-full flex flex-col">
+        {/* FE Toán Section */}
+        <div className="mb-20">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4">
+              🧮 FE Toán
+            </h2>
+            <p className="text-lg text-blue-100 opacity-90 font-medium">Toán học cơ bản - Nắm chắc kiến thức</p>
+          </div>
+
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
+            <div className="relative bg-white rounded-2xl shadow-2xl p-8 transform group-hover:scale-105 transition-all duration-300">
               <div className="absolute top-0 right-0 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-tr-2xl rounded-bl-2xl font-bold text-sm animate-bounce">
                 ✨ NEW
               </div>
               
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                  <BookOpen className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h2 className="text-2xl font-semibold text-gray-700">FE Toán</h2>
-                  <p className="text-sm text-gray-500 font-normal">Toán học cơ bản</p>
-                </div>
-              </div>
-
-              <div className="relative bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg p-4 mb-4 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-5 transform skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
-                <div className="relative z-10">
-                  <div className="text-2xl font-bold mb-2">150K / 3 buổi</div>
-                  <div className="space-y-1">
-                    <div className="flex items-center">
-                      <MessageCircle className="w-3 h-3 mr-1" />
-                      <span className="font-medium text-sm">3 buổi Online qua Meet</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="w-3 h-3 mr-1" />
-                      <span className="font-medium text-sm">Kèm theo Source Code</span>
-                    </div>
+              {/* Pricing Banner */}
+              <div className="relative bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-2xl p-6 mb-8 overflow-hidden shadow-2xl">
+                <div className="absolute top-0 left-0 w-full h-full bg-white opacity-10 transform skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
+                <div className="relative z-10 text-center">
+                  <div className="text-3xl font-black mb-3 tracking-wide">
+                    ÔN TẬP 3 BUỔI FE TOÁN - 150K
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-3 flex-grow">
+              {/* FE Subjects List */}
+              <div className="space-y-3 mb-8">
                 {feMathSubjects.map((subject) => (
-                  <div key={subject.code} className="flex items-center text-gray-700 bg-green-50 px-4 py-3 rounded-lg border border-green-100">
-                    <CheckCircle className="w-4 h-4 mr-3 flex-shrink-0 text-green-500" />
-                    <span className="font-semibold text-green-600">{subject.code}</span>
-                    <span className="mx-2 text-gray-400">-</span>
-                    <span className="text-sm font-normal">{subject.name}</span>
+                  <div key={subject.code} className="flex items-center bg-green-50/90 backdrop-blur-sm px-6 py-4 rounded-xl border border-green-100/50 hover:bg-green-100/90 transition-all duration-300 transform hover:scale-102 shadow-sm">
+                    <CheckCircle className="w-5 h-5 mr-4 flex-shrink-0 text-green-500" />
+                    <div>
+                      <span className="font-bold text-lg text-green-600 mr-3">{subject.code}</span>
+                      <span className="text-gray-600">- {subject.name}</span>
+                    </div>
                   </div>
                 ))}
+              </div>
+
+              {/* CTA Button */}
+              <div className="text-center">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100092640345636"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 text-white font-bold text-xl rounded-2xl hover:from-green-700 hover:via-emerald-700 hover:to-teal-700 transition-all duration-300 shadow-2xl hover:shadow-green-500/50 transform hover:scale-110"
+                >
+                  <MessageCircle className="w-6 h-6 mr-3" />
+                  🚀 HỌC NGAY ĐI
+                </a>
               </div>
             </div>
           </div>
